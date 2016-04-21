@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class movieTheater{
-  public static boolean managerCustomer(){ //selects manager/customer
-    Scanner input=new Scanner(System.in);
+  public static boolean managerCustomer(Scanner input){ //selects manager/customer
+    
     
     System.out.println(" Are you a: ");
     System.out.println(" 1. Manager");
@@ -88,7 +88,8 @@ public static String getMovieTitle(boolean manager){ //picks title for manager
 }
     
 
-public static void main(String[] args){
+public static void main(String[] args){ 
+  Scanner input=new Scanner(System.in);
   boolean managerCustomer;
   boolean iD;
   String movieTitle;
@@ -97,7 +98,7 @@ public static void main(String[] args){
   int continueLoop = 0;
   while (continueLoop == 0){
   
-   managerCustomer = managerCustomer(); //Manager =  true, customer = false
+   managerCustomer = managerCustomer(input); //Manager =  true, customer = false
 
 
    if (managerCustomer == true){
