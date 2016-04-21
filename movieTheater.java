@@ -21,12 +21,12 @@ public class movieTheater{
         input.next();
      }    
    } 
-           if (userInput == 1){
-             return true;
-           }
-           else{
-             return false;
-           }
+    if (userInput == 1){
+      return true;
+    }
+    else{
+     return false;
+    }
   }
   public static boolean checkID(){ //checks manager id
     Scanner input=new Scanner(System.in);
@@ -48,23 +48,23 @@ public class movieTheater{
       System.out.println();
       return false;
     }
-  }
+   }
   
-  System.out.print("Please enter password (case-sensitive): ");
-  String inputPassword = input.next();
+   System.out.print("Please enter password (case-sensitive): ");
+   String inputPassword = input.next();
   
-  while (correctInput ==0){
-    if (inputPassword.equals("123456")){
-      break;
-    }
-    else{
-      System.out.println("Incorrect password.");
-      System.out.println();
-      return false;
-    }
-  }
+   while (correctInput ==0){
+     if (inputPassword.equals("123456")){
+       break;
+     }
+     else{
+       System.out.println("Incorrect password.");
+       System.out.println();
+       return false;
+     }
+   }
   
-  return true;
+   return true;
     }
 
 public static String getMovieTitle(boolean manager){ //picks title for manager
@@ -75,13 +75,13 @@ public static String getMovieTitle(boolean manager){ //picks title for manager
   System.out.println();
  
   while (constraints ==0){
-  if (movieTitle.length() <2){
-    System.out.println("This movie title is not possible, please enter another title");
-    movieTitle = input.next();
-  }
-  else{
+   if (movieTitle.length() <2){
+     System.out.println("This movie title is not possible, please enter another title");
+     movieTitle = input.next();
+   }
+   else{
     break;
-  }
+   }
   }
   
   return movieTitle;
@@ -89,34 +89,34 @@ public static String getMovieTitle(boolean manager){ //picks title for manager
     
 
 public static void main(String[] args){
-boolean managerCustomer;
-boolean iD;
-String movieTitle;
-String movieTime;
-int numberOfSeats;
-int continueLoop = 0;
-while (continueLoop == 0){
+  boolean managerCustomer;
+  boolean iD;
+  String movieTitle;
+  String movieTime;
+  int numberOfSeats;
+  int continueLoop = 0;
+  while (continueLoop == 0){
   
-managerCustomer = managerCustomer(); //Manager =  true, customer = false
+   managerCustomer = managerCustomer(); //Manager =  true, customer = false
 
 
-if (managerCustomer == true){
-  iD = checkID();  //true = Username and Password correct, false = username and password incorrect
-  if (iD==true){
-    movieTitle = getMovieTitle(iD); //calls on movie title method 
+   if (managerCustomer == true){
+     iD = checkID();  //true = Username and Password correct, false = username and password incorrect
+     if (iD==true){
+     movieTitle = getMovieTitle(iD); //calls on movie title method 
     
+   }
+   else{
+    continue;
+   }
   }
-  else{
-  continue;}
-}
-
-}
+ }
 
 }
   public static void printTickets (int ticketNum) { //"prints" tickets
     System.out.println("Now printing "+ticketNum+" tickets. \nPlease enjoy the show!");
   }
-  public static int customerTickets (String movieTitle, String movieTime, int seats, int price,Scanner input) {
+  public static int customerTickets (String movieTitle, String movieTime, int seats, int price,Scanner input) { //takes input on number of tickets,checks to make sure enough seats, returns # of tickets 
     System.out.println("Today's movie is "+movieTitle+"\nTime: "+movieTime+"\nPrice: "+price);
     System.out.println("Please enter how many tickets you would like to buy");
     boolean loop = true;
@@ -134,7 +134,7 @@ if (managerCustomer == true){
     }
     return ticketNum;
   }
-  public static boolean customerPrice(int ticketNum, double ticketPrice,Scanner input) {
+  public static boolean customerPrice(int ticketNum, double ticketPrice,Scanner input) { //Takes # of tickets, calculates price, accepts price input and checks if it's enough
     double totalCost = ticketPrice *ticketNum;
     System.out.println("For "+ticketNum+" tickets, the price will be "+totalCost);
     System.out.println("Please enter the amount to pay:");
@@ -159,19 +159,3 @@ if (managerCustomer == true){
     return true;
   }
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                              
-                              
