@@ -86,7 +86,17 @@ public static String getMovieTitle(boolean manager){ //picks title for manager
   
   return movieTitle;
 }
-    
+
+public static void numberSold(int ticketsSold, int numberOfSeats){  
+  int ticketsLeft = numberOfSeats - ticketsSold;
+  System.out.println("The number of tickets sold is : " +ticketsSold);
+  System.out.println("The number of tickets left is : " +ticketsLeft);
+}
+//new
+public static void moneyMade(double ticketPrice, int ticketsSold){ 
+  double moneyMade = ticketPrice*ticketsSold;
+  System.out.println("Total money made is: " +moneyMade);
+}    
 
 public static void main(String[] args){ 
   Scanner input=new Scanner(System.in);
